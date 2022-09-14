@@ -1,4 +1,4 @@
-package com.ntamobile.getxpattern
+package com.ntamobile.financialbalance
 
 import io.flutter.embedding.android.FlutterActivity
 

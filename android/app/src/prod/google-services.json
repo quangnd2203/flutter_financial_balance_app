@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:722408477068:android:e2cb766c704f6e1ab706a9",
         "android_client_info": {
-          "package_name": "com.ntamobile.getxpattern"
+          "package_name": "com.ntamobile.financialbalance"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "722408477068-1mjk1pf3619mk5k5o6shvqfqrteakkik.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ntamobile.getxpattern",
+            "package_name": "com.ntamobile.financialbalance",
             "certificate_hash": "c7c6371a0f493f9f70db9df27cea8bc90c9a599f"
           }
         },
@@ -42,7 +42,7 @@
               "client_id": "722408477068-k64js2f2h643gjii0li4ub5pvj2rjag6.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.ntamobile.getxpattern.dev"
+                "bundle_id": "com.ntamobile.financialbalance.dev"
               }
             }
           ]
