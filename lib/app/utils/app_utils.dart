@@ -95,4 +95,8 @@ class AppUtils {
   static String convertPhoneNumber(String phone, {String code = '+84'}) {
     return '$code${phone.substring(1)}';
   }
+
+  static String numberFormat(dynamic number){
+    return NumberFormat.decimalPattern().format(number);
+  }
 }

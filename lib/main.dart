@@ -18,7 +18,7 @@ import 'app/utils/utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[]);
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[]);
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp]);
   await Firebase.initializeApp();
   await AppPrefs.initListener();
@@ -34,7 +34,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeSwitcherWidget(
-        initialThemeData: normalTheme(context), child: const MyApp());
+      initialThemeData: normalTheme(context),
+      child: const MyApp(),
+    );
   }
 }
 
@@ -65,6 +67,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     print('ChangeAppLifecycleState: $state');
   }
+
   @override
   Widget build(BuildContext context) {
     return NotificationListener<OverscrollIndicatorNotification>(

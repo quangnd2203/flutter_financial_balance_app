@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../widgets/formatters/number_input_formatter.dart';
+import '../../../constants/app_text_styles.dart';
+import '../navigation.dart';
 
 class CostItem extends StatelessWidget {
-  const CostItem({Key? key}) : super(key: key);
+
+  const CostItem({Key? key, required this.item}) : super(key: key);
+
+  final Map<String, dynamic> item;
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +19,26 @@ class CostItem extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex: 8,
-              child: buildNameInput(),
+              child: Text('${item['name']}', style: AppTextStyles.normalBoldBlack,),
             ),
             const SizedBox(
               width: 15,
             ),
-            Expanded(
-              flex: 2,
-              child: buildAmountInput(),
-            ),
+            Text('${item['percent']} %', style: AppTextStyles.normalBold,),
             const SizedBox(
               width: 8,
             ),
             IconButton(
               padding: EdgeInsets.zero,
-              onPressed: () => null,
+              onPressed: () => Get.find<NavigationController>().openDialogSettingCost(item),
+              color: Colors.black,
+              icon: const Icon(Icons.edit),
+              splashRadius: 20,
+              iconSize: 30,
+            ),
+            IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: () => Get.find<NavigationController>().deleteCost(item),
               color: Colors.red,
               icon: const Icon(Icons.remove_circle),
               splashRadius: 20,
@@ -36,36 +46,6 @@ class CostItem extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget buildNameInput() {
-    final OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
-    );
-    return TextField(
-      decoration: InputDecoration(
-        border: border,
-        contentPadding: const EdgeInsets.all(8),
-        enabledBorder: border.copyWith(borderSide: border.borderSide.copyWith(width: 1.5)),
-        hintText: 'Khoản chi',
-      ),
-    );
-  }
-
-  Widget buildAmountInput() {
-    final OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
-    );
-    return TextField(
-      textAlign: TextAlign.center,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-      decoration: InputDecoration(
-        border: border,
-        contentPadding: const EdgeInsets.all(8),
-        enabledBorder: border.copyWith(borderSide: border.borderSide.copyWith(width: 1.5)),
-        hintText: '%',
       ),
     );
   }

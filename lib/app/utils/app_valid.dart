@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 class AppValid {
   AppValid._();
   
-  static Function(String) validateFullName() {
+  static String? Function(String?) validateRequired() {
     return (String? value) {
       if (value?.isEmpty ?? true) {
-        return 'valid_full_name'.tr;
+        return 'required'.tr;
       }
       return null;
     };
