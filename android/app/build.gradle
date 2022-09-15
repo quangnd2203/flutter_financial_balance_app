@@ -47,9 +47,9 @@ apply plugin: 'com.google.gms.google-services'
 //apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
-    def appName = 'flutter'
+    def appName = 'Tinh tien'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'

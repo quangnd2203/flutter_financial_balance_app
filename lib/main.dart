@@ -76,6 +76,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         return true;
       },
       child: GetMaterialApp(
+        title: APP_NAME,
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.SPLASH,
         defaultTransition: Transition.cupertino,
